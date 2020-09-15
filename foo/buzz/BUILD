@@ -4,7 +4,7 @@ load("@npm//@angular-devkit/architect-cli:index.bzl", "architect", "architect_te
 filegroup(
     name = "common_deps",
     srcs = [
-        "angular.json",
+        "//:angular.json",
         "tsconfig.base.json",
     ],
     visibility = ["//:__subpackages__"],
@@ -27,7 +27,7 @@ APPLICATION_DEPS = [
 architect(
     name = "build",
     args = [
-        "frontend:build",
+        "buzz:build",
         "--outputPath=$(@D)",
     ],
     configuration_env_vars = ["NG_BUILD_CACHE"],
